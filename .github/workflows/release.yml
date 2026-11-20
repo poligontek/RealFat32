@@ -1,0 +1,30 @@
+name: Publish Windows release
+on:
+  push:
+    tags: ['v[0-9]*']
+permissions:
+  contents: write
+jobs:
+  release:
+    if: github.repository == 'poligontek/RealFat32'
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate release version
+        shell: pwsh
+        run: |
+          $source = Get-Content src/ReleaseInfo.cs -Raw
+          $version = [regex]::Match($source, 'const string Version = "([^"]+)"').Groups[1].Value
+          if ($env:GITHUB_REF_NAME -ne "v$version") { throw 'The tag must match ReleaseInfo.Version.' }
+      - name: Build and test
+        shell: pwsh
+        run: ./build.ps1 -Test
+      - name: Publish executable, checksum and changelog
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $releaseArguments = @('release','create',$env:GITHUB_REF_NAME,'--verify-tag','--title',"RealFat32 $env:GITHUB_REF_NAME",'--notes-file','CHANGELOG.md','dist/RealFat32.exe','dist/RealFat32.exe.sha256','dist/CHANGELOG.md')
+          if ($env:GITHUB_REF_NAME -match '-(alpha|beta|rc)\.') { $releaseArguments += '--prerelease' }
+          & gh @releaseArguments
+          if ($LASTEXITCODE -ne 0) { throw 'GitHub Release publication failed.' }

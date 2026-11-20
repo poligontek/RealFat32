@@ -1,0 +1,16 @@
+name: Windows build
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and test without disk access
+        shell: pwsh
+        run: ./build.ps1 -Test
+      - uses: actions/upload-artifact@v4
+        with:
+          name: RealFat32-preview-windows-x64
+          path: |
+            dist/RealFat32.exe
+            dist/README.md

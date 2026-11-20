@@ -1,0 +1,7 @@
+dist/
+*.user
+*.suo
+.vs/
+*.img
+*.vhd
+*.vhdx

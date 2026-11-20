@@ -1,0 +1,19 @@
+0.3.0-alpha.1 · Alpha · 2026-11-20
+• Fundo cinza claro mais luminoso; modo noturno opcional.
+• Idioma automático do Windows e seleção manual.
+• Atualizações de poligontek/RealFat32: verificação ao iniciar, botão manual e aviso Sim/Não apenas quando há uma versão mais recente.
+• Verificação SHA256, backup e reinício automático após aceitar.
+• Canais Estável, Beta e Alpha.
+• Sobre: Fabian Gonzalez Dev · PoligonTek.
+
+0.2.0 · Preview · 2026-11-20
+• Temas claro/noturno; espanhol, inglês e português.
+• Confirmação com contagem regressiva de três segundos.
+• Corneta de festa, confetes e OK verde ao concluir.
+
+0.1.0 · Preview · 2026-11-20
+• Primeiro aplicativo portátil, consulta e mecanismo FAT32.
+
+Alpha: desenvolvimento inicial. Beta: testes. RC: candidata final.
+Estável: versão final publicada.
+As versões 0.1/0.2 eram compilações locais preliminares.
