@@ -76,4 +76,9 @@ Sobre un VHD descartable y luego un USB sin datos: comprobar detección, elevaci
 - [Extensiones de disco](https://learn.microsoft.com/en-us/windows/win32/api/winioctl/ns-winioctl-disk_extent).
 - [Tipo de partición MBR](https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/ntdddisk/ns-ntdddisk-_set_partition_information).
 
-Código y Releases: https://github.com/poligontek/RealFat32. La aplicación se organiza en `D:\Trabajos\PoligonTek\Poligontek\RealFat32\App` y la landing en `D:\Trabajos\PoligonTek\Poligontek\RealFat32\Web`. Esta versión no está firmada digitalmente.
+Código y Releases: https://github.com/poligontek/RealFat32. La aplicación se organiza en `D:\Trabajos\PoligonTek\RealFat32\App` y la landing en `D:\Trabajos\PoligonTek\Poligontek\RealFat32\Web`. Esta versión no está firmada digitalmente.
+
+## Unified working copy · 2026-11-22
+
+Canonical local repository: `D:\Trabajos\PoligonTek\RealFat32\App`.
+Use this folder in GitHub Desktop (File → Add local repository). The Git history and existing local changes were preserved during consolidation.
